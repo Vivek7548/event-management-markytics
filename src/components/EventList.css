@@ -1,32 +1,45 @@
 .event-list {
     color: white;
-    /* Set text color to white */
     background-color: transparent;
-    /* Optional: Set a background color to ensure white text is readable */
     padding: 20px;
 }
 
 .event-list h2 {
     color: white;
-    /* Ensure the header text color is white */
 }
 
 .event-list p {
     color: white;
-    /* Ensure the paragraph text color is white */
 }
 
 .event-item {
     margin-bottom: 10px;
-    padding: 10px;
+    padding: 15px;
     border: 1px solid #71530f;
-    /* Optional: Border to make the items stand out */
     border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.event-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02);
+    border-color: orange;
 }
 
 .event-title {
     color: #ffcc00;
-    /* Optional: Different color for titles for better visibility */
+    margin: 0;
+    padding-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.event-title:hover {
+    color: #f1c40f;
+}
+
+.event-details p {
+    margin: 5px 0;
 }
 
 .event-buttons button {
@@ -35,28 +48,63 @@
     border: none;
     border-radius: 3px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
+
+/* Delete button styles */
 
 .delete {
     background-color: #e74c3c;
-    /* Red background for delete button */
     color: white;
-    /* Text color for delete button */
 }
 
 .delete:hover {
     background-color: #c0392b;
-    /* Darker red on hover */
 }
+
+
+/* Edit button styles */
 
 .event-buttons a button {
     background-color: #3498db;
-    /* Blue background for edit button */
     color: white;
-    /* Text color for edit button */
 }
 
 .event-buttons a button:hover {
     background-color: #2980b9;
-    /* Darker blue on hover */
+}
+
+
+/* Filter button styles */
+
+.filter-options button {
+    padding: 10px 15px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    margin-right: 10px;
+    /* Space between buttons */
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+
+/* Active filter button */
+
+.filter-options button.active-filter {
+    border-color: greenyellow;
+    background-color: #333;
+    color: greenyellow;
+}
+
+
+/* Hover effect for filter buttons */
+
+.filter-options button:hover {
+    background-color: #333;
+    color: greenyellow;
+    border-color: greenyellow;
+    transform: scale(1.05);
 }

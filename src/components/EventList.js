@@ -12,10 +12,13 @@ const EventList = () => {
   };
 
   const filteredEvents = events.filter((event) => {
+    const eventDate = new Date(event.date);
+    const currentDate = new Date();
+
     if (filter === "Upcoming") {
-      return new Date(event.date) > new Date();
+      return eventDate >= currentDate;
     } else if (filter === "Past") {
-      return new Date(event.date) < new Date();
+      return eventDate < currentDate;
     }
     return true; // "All" case
   });
@@ -35,13 +38,13 @@ const EventList = () => {
           All
         </button>
         <button
-          className={filter === "Past" ? "active-filter" : ""}
+          className={filter === "Upcoming" ? "active-filter" : ""}
           onClick={() => handleFilterChange("Upcoming")}
         >
           Upcoming
         </button>
         <button
-          className={filter === "Upcoming" ? "active-filter" : ""}
+          className={filter === "Past" ? "active-filter" : ""}
           onClick={() => handleFilterChange("Past")}
         >
           Past
