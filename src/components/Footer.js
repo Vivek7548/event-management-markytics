@@ -8,6 +8,7 @@ const FooterContainer = styled.footer`
   text-align: center;
   margin-top: auto;
   border-top: 1px solid #4CAF50;
+  /* width: 100%; */
 `;
 
 const FooterText = styled.p`

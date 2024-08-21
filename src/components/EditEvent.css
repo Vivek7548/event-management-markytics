@@ -4,7 +4,7 @@
 /* Style for the edit event form container */
 
 .edit-event-form {
-    background-color: transparent;
+    background-color: white;
     /* Transparent background */
     border-radius: 10px;
     /* Rounded corners */
@@ -44,7 +44,7 @@
     /* Bold text */
     margin-bottom: 5px;
     /* Space below the label */
-    color: #e8e0e0;
+    color: black;
     /* Label text color */
 }
 
