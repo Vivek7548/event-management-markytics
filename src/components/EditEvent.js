@@ -1,9 +1,88 @@
-// src/components/EditEvent.js
-
 import React, { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { EventContext } from "../contexts/EventContext";
-import "./EditEvent.css"; // Import the enhanced CSS
+import styled from "styled-components";
+
+// Styled components
+const FormContainer = styled.form`
+  background-color: transparent;
+  padding: 25px;
+  border: 1px solid orange;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+  max-width: 450px;
+  margin: 60px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+    border: 1px solid white;
+  }
+`;
+
+const FormGroup = styled.div`
+  margin-bottom: 15px;
+`;
+
+const Label = styled.label`
+  display: block;
+  margin-bottom: 8px;
+  color: white;
+  font-weight: 600;
+`;
+
+const Input = styled.input`
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #fafafa;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+
+  &:focus {
+    border-color: #3f51b5;
+    background-color: #fff;
+    outline: none;
+  }
+`;
+
+const Select = styled.select`
+  width: calc(100% - 0.5px);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #fafafa;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+
+  &:focus {
+    border-color: #3f51b5;
+    background-color: #fff;
+    outline: none;
+  }
+`;
+
+const SubmitButton = styled.button`
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #3f51b5;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    background-color: #303f9f;
+    transform: translateY(-2px);
+  }
+`;
 
 const EditEvent = () => {
   const { id } = useParams();
@@ -34,44 +113,44 @@ const EditEvent = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="edit-event-form">
+    <FormContainer onSubmit={handleSubmit}>
       <h2>Edit Event</h2>
-      <div>
-        <label>Title:</label>
-        <input
+      <FormGroup>
+        <Label>Title:</Label>
+        <Input
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
         />
-      </div>
-      <div>
-        <label>Date:</label>
-        <input
+      </FormGroup>
+      <FormGroup>
+        <Label>Date:</Label>
+        <Input
           type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
           required
         />
-      </div>
-      <div>
-        <label>City:</label>
-        <input
+      </FormGroup>
+      <FormGroup>
+        <Label>City:</Label>
+        <Input
           type="text"
           value={city}
           onChange={(e) => setCity(e.target.value)}
           required
         />
-      </div>
-      <div>
-        <label>Status:</label>
-        <select value={status} onChange={(e) => setStatus(e.target.value)}>
+      </FormGroup>
+      <FormGroup>
+        <Label>Status:</Label>
+        <Select value={status} onChange={(e) => setStatus(e.target.value)}>
           <option value="Upcoming">Upcoming</option>
           <option value="Past">Past</option>
-        </select>
-      </div>
-      <button type="submit">Update Event</button>
-    </form>
+        </Select>
+      </FormGroup>
+      <SubmitButton type="submit">Update Event</SubmitButton>
+    </FormContainer>
   );
 };
 

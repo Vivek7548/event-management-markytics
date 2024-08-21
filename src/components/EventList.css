@@ -1,110 +1,136 @@
+/* General styles for event list */
+
 .event-list {
-    color: white;
-    background-color: transparent;
-    padding: 20px;
+  color: white;
+  background-color: transparent;
+  padding: 20px;
 }
 
 .event-list h2 {
-    color: white;
+  color: white;
 }
 
 .event-list p {
-    color: white;
+  color: white;
 }
 
+/* Event item styles */
+
 .event-item {
-    margin-bottom: 10px;
-    padding: 15px;
-    border: 1px solid #71530f;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  margin-bottom: 10px;
+  padding: 15px;
+  border: 1px solid #71530f;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease,
+    transform 0.3s ease;
 }
 
 .event-item:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transform: scale(1.02);
-    border-color: orange;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transform: scale(1.02);
+  border-color: orange;
 }
 
+/* Event title styles */
+
 .event-title {
-    color: #ffcc00;
-    margin: 0;
-    padding-bottom: 10px;
-    transition: color 0.3s ease;
+  color: #ffcc00;
+  margin: 0;
+  padding-bottom: 10px;
+  transition: color 0.3s ease;
 }
 
 .event-title:hover {
-    color: #f1c40f;
+  color: #f1c40f;
 }
+
+/* Event details styles */
 
 .event-details p {
-    margin: 5px 0;
+  margin: 5px 0;
 }
+
+/* Button styles */
 
 .event-buttons button {
-    margin-right: 10px;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-right: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
-
 
 /* Delete button styles */
 
 .delete {
-    background-color: #e74c3c;
-    color: white;
+  background-color: #e74c3c;
+  color: white;
 }
 
 .delete:hover {
-    background-color: #c0392b;
+  background-color: #c0392b;
 }
-
 
 /* Edit button styles */
 
 .event-buttons a button {
-    background-color: #3498db;
-    color: white;
+  background-color: #3498db;
+  color: white;
 }
 
 .event-buttons a button:hover {
-    background-color: #2980b9;
+  background-color: #2980b9;
 }
-
 
 /* Filter button styles */
 
-.filter-options button {
-    padding: 10px 15px;
-    border: 2px solid transparent;
-    border-radius: 5px;
-    background-color: black;
-    color: white;
-    cursor: pointer;
-    margin-right: 10px;
-    /* Space between buttons */
-    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+.filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  /* Allows buttons to wrap to the next line on smaller screens */
 }
 
+.filter-options button {
+  padding: 10px 15px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  margin-right: 10px;
+  /* Adds space between buttons */
+  margin-bottom: 10px;
+  /* Adds space below buttons for wrapping */
+  transition: color 0.3s ease, background-color 0.3s ease,
+    border-color 0.3s ease;
+}
 
 /* Active filter button */
 
 .filter-options button.active-filter {
-    border-color: greenyellow;
-    background-color: #333;
-    color: greenyellow;
+  border-color: greenyellow;
+  background-color: #333;
+  color: greenyellow;
 }
-
 
 /* Hover effect for filter buttons */
 
 .filter-options button:hover {
-    background-color: #333;
-    color: greenyellow;
-    border-color: greenyellow;
-    transform: scale(1.05);
+  background-color: #333;
+  color: greenyellow;
+  border-color: greenyellow;
+  transform: scale(1.05);
+}
+
+/* Media query for small screens */
+
+@media (max-width: 600px) {
+  .filter-options button {
+    margin-right: 5px;
+    /* Reduce space between buttons on small screens */
+    margin-bottom: 10px;
+    /* Space below buttons remains the same */
+  }
 }

@@ -3,9 +3,9 @@ import { EventContext } from "../contexts/EventContext";
 import styled from "styled-components";
 
 const FormContainer = styled.form`
-  background-color: #f9f9f9;
+  background-color: transparent;
   padding: 25px;
-  border-radius: 12px;
+  border: 1px solid orange;
   box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
   max-width: 450px;
   margin: 60px auto;
@@ -17,6 +17,7 @@ const FormContainer = styled.form`
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+    border: 1px solid white;
   }
 `;
 
@@ -27,12 +28,12 @@ const FormGroup = styled.div`
 const Label = styled.label`
   display: block;
   margin-bottom: 8px;
-  color: #222;
+  color: white;
   font-weight: 600;
 `;
 
 const Input = styled.input`
-  width: 100%;
+  width: calc(100% - 20px);
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -48,7 +49,7 @@ const Input = styled.input`
 `;
 
 const Select = styled.select`
-  width: 100%;
+  width: calc(100% - 2px); /* Further increasing width */
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 8px;
