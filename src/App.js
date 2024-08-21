@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
 
-function App() {
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import EventDashboard from "./components/EventDashboard";
+import EventList from "./components/EventList";
+import AddEvent from "./components/AddEvent";
+import EditEvent from "./components/EditEvent";
+import "./App.css";
+import { EventProvider } from "./contexts/EventContext";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header />
+      <main>
+        <EventProvider>
+          <Routes>
+            <Route path="/" element={<EventDashboard />} />
+            <Route path="/events" element={<EventList />} />
+            <Route path="/add-event" element={<AddEvent />} />
+            <Route path="/edit-event/:id" element={<EditEvent />} /> {/* Edit Event Route */}
+          </Routes>
+        </EventProvider>
+      </main>
+      <Footer />
+    </Router>
   );
-}
+};
 
 export default App;

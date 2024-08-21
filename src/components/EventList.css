@@ -1,0 +1,62 @@
+.event-list {
+    color: white;
+    /* Set text color to white */
+    background-color: transparent;
+    /* Optional: Set a background color to ensure white text is readable */
+    padding: 20px;
+}
+
+.event-list h2 {
+    color: white;
+    /* Ensure the header text color is white */
+}
+
+.event-list p {
+    color: white;
+    /* Ensure the paragraph text color is white */
+}
+
+.event-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #71530f;
+    /* Optional: Border to make the items stand out */
+    border-radius: 5px;
+}
+
+.event-title {
+    color: #ffcc00;
+    /* Optional: Different color for titles for better visibility */
+}
+
+.event-buttons button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.delete {
+    background-color: #e74c3c;
+    /* Red background for delete button */
+    color: white;
+    /* Text color for delete button */
+}
+
+.delete:hover {
+    background-color: #c0392b;
+    /* Darker red on hover */
+}
+
+.event-buttons a button {
+    background-color: #3498db;
+    /* Blue background for edit button */
+    color: white;
+    /* Text color for edit button */
+}
+
+.event-buttons a button:hover {
+    background-color: #2980b9;
+    /* Darker blue on hover */
+}

@@ -1,0 +1,113 @@
+/* src/components/EditEvent.css */
+
+
+/* Style for the edit event form container */
+
+.edit-event-form {
+    background-color: transparent;
+    /* Transparent background */
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 10px 14px 10px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    padding: 30px;
+    /* Padding inside the form */
+    max-width: 500px;
+    /* Maximum width of the form */
+    margin: 50px auto;
+    /* Center the form horizontally with vertical margin */
+    border: 1px solid black;
+    /* Black border around the form */
+}
+
+
+/* Style for the form heading */
+
+.edit-event-form h2 {
+    text-align: center;
+    /* Center-align the heading */
+    color: #e43e3e;
+    /* Heading color */
+    margin-bottom: 20px;
+    /* Space below the heading */
+    font-size: 24px;
+    /* Font size of the heading */
+}
+
+
+/* Style for form labels */
+
+.edit-event-form label {
+    display: block;
+    /* Labels are block elements */
+    font-weight: bold;
+    /* Bold text */
+    margin-bottom: 5px;
+    /* Space below the label */
+    color: #e8e0e0;
+    /* Label text color */
+}
+
+
+/* Style for form inputs and selects */
+
+.edit-event-form input,
+.edit-event-form select {
+    width: 100%;
+    /* Full width of the container */
+    padding: 10px;
+    /* Padding inside the input/select fields */
+    margin-bottom: 15px;
+    /* Space below each field */
+    border: 1px solid black;
+    /* Black border for the fields */
+    border-radius: 5px;
+    /* Rounded corners */
+    font-size: 16px;
+    /* Font size inside the fields */
+}
+
+
+/* Style for focused input/select fields */
+
+.edit-event-form input:focus,
+.edit-event-form select:focus {
+    outline: none;
+    /* Remove default focus outline */
+    border-color: #131613;
+    /* Dark border color on focus */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+    /* Subtle shadow on focus */
+}
+
+
+/* Style for form buttons */
+
+.edit-event-form button {
+    width: 100%;
+    /* Full width of the container */
+    padding: 12px;
+    /* Padding inside the button */
+    background-color: #4caf50;
+    /* Button background color */
+    border: none;
+    /* No border for the button */
+    border-radius: 5px;
+    /* Rounded corners */
+    color: white;
+    /* Text color */
+    font-size: 18px;
+    /* Font size */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: background-color 0.3s ease;
+    /* Smooth transition for background color */
+}
+
+
+/* Style for button hover effect */
+
+.edit-event-form button:hover {
+    background-color: #1a3c1a;
+    /* Darker background color on hover */
+}

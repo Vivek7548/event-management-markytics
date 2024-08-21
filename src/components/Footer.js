@@ -1,9 +1,26 @@
-import React from 'react'
+import React from "react";
+import styled from "styled-components";
 
-export default function Footer() {
+const FooterContainer = styled.footer`
+    background-color: black;
+    color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: auto;
+  border-top: 1px solid #4CAF50;
+`;
+
+const FooterText = styled.p`
+  margin: 0;
+  font-size: 14px;
+`;
+
+const Footer = () => {
   return (
-    <footer>
-      <p>&copy; 2024 Event Management. All Rights Reserved.</p>
-    </footer>
-  )
-}
+    <FooterContainer>
+      <FooterText>&copy; 2024 Event Management. All rights reserved.</FooterText>
+    </FooterContainer>
+  );
+};
+
+export default Footer;

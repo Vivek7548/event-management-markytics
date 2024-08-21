@@ -1,9 +1,18 @@
-// src/components/EventDashboard.js
 import React from "react";
+import styled from "styled-components";
 import EventSummaryCard from "./EventSummaryCard";
 
+const DashboardContainer = styled.div`
+  padding: 20px;
+`;
+
+const SectionTitle = styled.h2`
+  color: #4CAF50;
+  text-align: center;
+  margin-top: 40px;
+`;
+
 const EventDashboard = () => {
-  // Dummy data for events
   const upcomingEvents = [
     {
       id: 1,
@@ -13,34 +22,29 @@ const EventDashboard = () => {
       time: "At 5pm"
     },
   ];
-  const pastEvents = 
-  [
-    { 
-      id: 2, 
-      title: "Workshop", 
-      date: "2024-08-01" ,
+
+  const pastEvents = [
+    {
+      id: 2,
+      title: "Workshop",
+      date: "2024-08-01",
       city: "Mumbai",
-      time: "monday"
-
-
+      time: "Monday"
     }
   ];
 
   return (
-    <div>
-      <h2>Upcoming Events</h2>
+    <DashboardContainer>
+      <SectionTitle>Upcoming Events</SectionTitle>
       {upcomingEvents.map((event) => (
         <EventSummaryCard key={event.id} event={event} />
       ))}
 
-      <h2>Past Events</h2>
-      {
-        pastEvents.map((event) => (
-          <EventSummaryCard key={event.id} event={event} />
-        ))
-      }
-      
-    </div>
+      <SectionTitle>Past Events</SectionTitle>
+      {pastEvents.map((event) => (
+        <EventSummaryCard key={event.id} event={event} />
+      ))}
+    </DashboardContainer>
   );
 };
 
