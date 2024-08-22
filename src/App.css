@@ -7,7 +7,29 @@ html {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: linear-gradient(to right, rgb(48, 48, 39), rgb(104, 8, 104));
+    background-image: linear-gradient( to right, rgb(48, 48, 39), rgb(104, 8, 104));
+    animation: backgroundAnimation 15s ease infinite;
+}
+
+
+/* Define the background color transition animation */
+
+@keyframes backgroundAnimation {
+    0% {
+        background-image: linear-gradient( to right, rgb(48, 48, 39), rgb(104, 8, 104));
+    }
+    25% {
+        background-image: linear-gradient( to right, rgb(104, 8, 104), rgb(0, 172, 238));
+    }
+    50% {
+        background-image: linear-gradient( to right, rgb(0, 172, 238), rgb(38, 115, 77));
+    }
+    75% {
+        background-image: linear-gradient( to right, rgb(38, 115, 77), rgb(218, 57, 74));
+    }
+    100% {
+        background-image: linear-gradient( to right, rgb(218, 57, 74), rgb(48, 48, 39));
+    }
 }
 
 #root {
@@ -71,7 +93,7 @@ nav {
 /* Sliding underline effect */
 
 .nav-links li a::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;

@@ -1,26 +1,35 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 
-// Keyframes for animations
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+// Keyframes for background color animation
+const backgroundAnimation = keyframes`
+  0% {
+    background-image: linear-gradient(to right, rgb(48, 48, 39), rgb(104, 8, 104));
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  25% {
+    background-image: linear-gradient(to right, rgb(104, 8, 104), rgb(0, 172, 238));
+  }
+  50% {
+    background-image: linear-gradient(to right, rgb(0, 172, 238), rgb(38, 115, 77));
+  }
+  75% {
+    background-image: linear-gradient(to right, rgb(38, 115, 77), rgb(218, 57, 74));
+  }
+  100% {
+    background-image: linear-gradient(to right, rgb(218, 57, 74), rgb(48, 48, 39));
   }
 `;
 
-// Dashboard container styling
+// Dashboard container styling with background animation
 const DashboardContainer = styled.div`
   padding: 20px;
-  background-image: linear-gradient(to right, rgb(48, 48, 39), rgb(104, 8, 104));
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-size: cover;
+  background-attachment: fixed;
+  animation: ${backgroundAnimation} 15s ease infinite;
 `;
 
 // Section title styling with animation
@@ -28,7 +37,7 @@ const SectionTitle = styled.h2`
   color: white;
   text-align: center;
   font-size: 28px;
-  animation: ${fadeIn} 1s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
   padding: 10px 0;
 `;
 
@@ -36,10 +45,10 @@ const SectionTitle = styled.h2`
 const EventSection = styled.div`
   margin: 20px 0;
   padding: 20px;
-  background-color: ${(props) => props.backgroundColor || "#333"};
+  background-color: transparent; /* Set to transparent to see background animation */
   border: 10px;
   box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
-  animation: ${fadeIn} 1s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
 
   display: flex;
   justify-content: center;
@@ -62,7 +71,7 @@ const StyledEventSummaryCard = styled.div`
   border: 1px solid #ffcc00;
   padding: 10px;
   border-radius: 8px;
-  box-shadow: 10px 4px 10px  rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
   width: 250px;
   margin-bottom: 15px;
@@ -87,7 +96,7 @@ const StyledEventSummaryCard = styled.div`
   }
 
   .event-title {
-    color: #ffcc00;  
+    color: #ffcc00;
     font-weight: bold;
   }
 
@@ -112,7 +121,7 @@ const JoinButton = styled.button`
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: blue ;
+    background-color: blue;
   }
 `;
 
@@ -130,7 +139,7 @@ const CheckButton = styled.button`
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: blue ;
+    background-color: blue;
   }
 `;
 
@@ -185,7 +194,7 @@ const EventDashboard = () => {
 
   return (
     <DashboardContainer>
-      <EventSection backgroundColor="transparent">
+      <EventSection>
         <SectionTitle>Upcoming Events</SectionTitle>
         {upcomingEvents.map((event) => (
           <StyledEventSummaryCard key={event.id}>
@@ -198,7 +207,7 @@ const EventDashboard = () => {
         ))}
       </EventSection>
 
-      <EventSection backgroundColor="transparent">
+      <EventSection>
         <SectionTitle>Past Events</SectionTitle>
         {pastEvents.map((event) => (
           <StyledEventSummaryCard key={event.id}>
