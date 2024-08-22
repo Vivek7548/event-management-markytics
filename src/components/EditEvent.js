@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { EventContext } from "../contexts/EventContext";
 import styled from "styled-components";
 
-// Styled components
+// Define styled components or import if defined in another file
 const FormContainer = styled.form`
   background-color: transparent;
   padding: 25px;

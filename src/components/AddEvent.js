@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { EventContext } from "../contexts/EventContext";
 import styled from "styled-components";
 
+// Styled components
 const FormContainer = styled.form`
   background-color: transparent;
   padding: 25px;
@@ -12,6 +13,7 @@ const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   gap: 15px;
+  color: white;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
@@ -49,7 +51,7 @@ const Input = styled.input`
 `;
 
 const Select = styled.select`
-  width: calc(100% - 2px); /* Further increasing width */
+  width: calc(100% - 0.5px);
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -82,7 +84,7 @@ const SubmitButton = styled.button`
 `;
 
 const AddEvent = () => {
-  const { addEvent } = useContext(EventContext);
+  const { addEvent, events } = useContext(EventContext);
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
   const [city, setCity] = useState("");
@@ -92,6 +94,11 @@ const AddEvent = () => {
     e.preventDefault();
     const newEvent = { id: Date.now(), title, date, city, status };
     addEvent(newEvent);
+
+    // Save updated events to localStorage
+    const updatedEvents = [...events, newEvent];
+    localStorage.setItem("events", JSON.stringify(updatedEvents));
+
     setTitle("");
     setDate("");
     setCity("");
