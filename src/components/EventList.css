@@ -1,4 +1,4 @@
-/* General styles for event list */
+/*  styles for event list */
 
 .event-list {
     color: white;
@@ -92,6 +92,8 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transform: scale(1.02);
     border: 1px solid greenyellow;
+    color: black;
+    font-weight: bold;
 }
 
 
