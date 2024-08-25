@@ -46,6 +46,7 @@ const DetailButton = styled.button`
   
   &:hover {
     background-color: greenyellow; /* Color change on hover */
+    transform: scale(1.05); /* Slight scaling effect on hover */
     color: black;
     
   }

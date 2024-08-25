@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Link } from 'react-router-dom'; // Import Link for navigation
 import { EventContext } from "../contexts/EventContext";
 import EventSummaryCard from "./EventSummaryCard";
 import styled, { keyframes } from "styled-components";
@@ -58,7 +59,6 @@ const Heading = styled.h1`
   text-align: center;
   margin-bottom: 20px;
   color: black;
-  /* background-color: #333; */
   padding: 10px;
   border-radius: 8px;
 `;
@@ -99,7 +99,6 @@ const SectionHeading = styled.h2`
   text-align: center;
   margin-bottom: 10px;
   color: #fff;
-  /* background-color: #444; */
   padding: 8px;
   border-radius: 6px;
   animation: ${fadeIn} 0.5s ease-in-out;
@@ -128,15 +127,14 @@ const EventCard = styled.div`
     transform: scale(1.05);
     border-color: greenyellow;
     background: rgba(255, 255, 255, 0.2);
-    color: black; /* Change the color of text to black on hover */
+    color: black;
     box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.15);
   }
 
   &:hover * {
-    color: black; /* Ensures all child elements (e.g., text) also change to black */
+    color: black;
   }
 `;
-
 
 const EventDashboard = () => {
   const { events } = useContext(EventContext);
@@ -161,9 +159,11 @@ const EventDashboard = () => {
         <SectionHeading>Upcoming Events</SectionHeading>
         <EventsList>
           {upcomingEvents.map((event) => (
-            <EventCard key={event.id}>
-              <EventSummaryCard event={event} />
-            </EventCard>
+            <Link to={`/event-details/${event.id}`} key={event.id} style={{ textDecoration: 'none' }}>
+              <EventCard>
+                <EventSummaryCard event={event} />
+              </EventCard>
+            </Link>
           ))}
         </EventsList>
       </Section>
@@ -173,9 +173,11 @@ const EventDashboard = () => {
         <SectionHeading>Past Events</SectionHeading>
         <EventsList>
           {pastEvents.map((event) => (
-            <EventCard key={event.id}>
-              <EventSummaryCard event={event} />
-            </EventCard>
+            <Link to={`/event-details/${event.id}`} key={event.id} style={{ textDecoration: 'none' }}>
+              <EventCard>
+                <EventSummaryCard event={event} />
+              </EventCard>
+            </Link>
           ))}
         </EventsList>
       </Section>

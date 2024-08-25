@@ -9,6 +9,7 @@ import EventList from "./components/EventList";
 import AddEvent from "./components/AddEvent";
 import EditEvent from "./components/EditEvent";
 import "./App.css";
+import EventDetails from './components/EventDetails'; 
 import { EventProvider } from "./contexts/EventContext";
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
             <Route path="/" element={<EventDashboard />} />
             <Route path="/events" element={<EventList />} />
             <Route path="/add-event" element={<AddEvent />} />
+            <Route path="/event-details/:id" element={<EventDetails />} />
             <Route path="/edit-event/:id" element={<EditEvent />} /> {/* Edit Event Route */}
           </Routes>
         </EventProvider>
