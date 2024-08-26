@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 const FooterContainer = styled.footer`
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
   padding: 20px;
   text-align: center;
   margin-top: auto;
-  border-top: 1px solid #4CAF50;
+  border-top: 1px solid #4caf50;
   /* width: 100%; */
 `;
 
@@ -19,7 +19,9 @@ const FooterText = styled.p`
 const Footer = () => {
   return (
     <FooterContainer>
-      <FooterText>&copy; 2024 Event Management. All rights reserved.</FooterText>
+      <FooterText>
+        &copy; 2024 Event Management. All rights reserved.
+      </FooterText>
     </FooterContainer>
   );
 };

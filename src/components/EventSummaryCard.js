@@ -43,12 +43,11 @@ const DetailButton = styled.button`
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  
+
   &:hover {
     background-color: greenyellow; /* Color change on hover */
     transform: scale(1.05); /* Slight scaling effect on hover */
     color: black;
-    
   }
 
   &:focus {
@@ -61,7 +60,7 @@ const EventSummaryCard = ({ event }) => {
   return (
     <Card>
       <Title>{event.title}</Title>
-      <Details>{event.date}</Details>
+      {/* <Details>{event.date}</Details> */}
       <Details>{event.city}</Details>
       {/* Adding the Event Detail button */}
       <DetailButton>Event Detail</DetailButton>

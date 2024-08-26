@@ -76,7 +76,8 @@ const CardContainer = styled.div`
       0.3
     ); /* Slightly lighter background on hover */
     border-color: greenyellow; /* Change border color on hover */
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5); /* Enhanced box shadow on hover */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.8);
+    /* Enhanced box shadow on hover */
   }
 `;
 

@@ -1,14 +1,14 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { EventContext } from '../contexts/EventContext';
-import { Link } from 'react-router-dom';
-import './EventList.css';
+import React, { useContext, useEffect, useState } from "react";
+import { EventContext } from "../contexts/EventContext";
+import { Link } from "react-router-dom";
+import "./EventList.css";
 
 const EventList = () => {
   const { events, deleteEvent, setEvents } = useContext(EventContext);
-  const [filter, setFilter] = useState('All');
+  const [filter, setFilter] = useState("All");
 
   useEffect(() => {
-    const savedEvents = JSON.parse(localStorage.getItem('events'));
+    const savedEvents = JSON.parse(localStorage.getItem("events"));
     if (savedEvents) {
       setEvents(savedEvents);
     }
@@ -22,9 +22,9 @@ const EventList = () => {
     const eventDate = new Date(event.date);
     const currentDate = new Date();
 
-    if (filter === 'Upcoming') {
+    if (filter === "Upcoming") {
       return eventDate >= currentDate;
-    } else if (filter === 'Past') {
+    } else if (filter === "Past") {
       return eventDate < currentDate;
     }
     return true; // 'All' case
@@ -35,20 +35,20 @@ const EventList = () => {
       <h2>Event List</h2>
       <div className="filter-options">
         <button
-          className={filter === 'All' ? 'active-filter' : ''}
-          onClick={() => handleFilterChange('All')}
+          className={filter === "All" ? "active-filter" : ""}
+          onClick={() => handleFilterChange("All")}
         >
           All
         </button>
         <button
-          className={filter === 'Upcoming' ? 'active-filter' : ''}
-          onClick={() => handleFilterChange('Upcoming')}
+          className={filter === "Upcoming" ? "active-filter" : ""}
+          onClick={() => handleFilterChange("Upcoming")}
         >
           Upcoming
         </button>
         <button
-          className={filter === 'Past' ? 'active-filter' : ''}
-          onClick={() => handleFilterChange('Past')}
+          className={filter === "Past" ? "active-filter" : ""}
+          onClick={() => handleFilterChange("Past")}
         >
           Past
         </button>
