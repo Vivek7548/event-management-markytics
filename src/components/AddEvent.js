@@ -105,6 +105,19 @@ const AddEvent = () => {
     setStatus("Upcoming");
   };
 
+  // Function to automatically set status based on date
+  const handleDateChange = (e) => {
+    const selectedDate = new Date(e.target.value);
+    const currentDate = new Date();
+    setDate(e.target.value);
+
+    if (selectedDate < currentDate) {
+      setStatus("Past");
+    } else {
+      setStatus("Upcoming");
+    }
+  };
+
   return (
     <FormContainer onSubmit={handleSubmit}>
       <FormGroup>
@@ -118,12 +131,7 @@ const AddEvent = () => {
       </FormGroup>
       <FormGroup>
         <Label>Date:</Label>
-        <Input
-          type="date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-          required
-        />
+        <Input type="date" value={date} onChange={handleDateChange} required />
       </FormGroup>
       <FormGroup>
         <Label>City:</Label>
@@ -136,7 +144,11 @@ const AddEvent = () => {
       </FormGroup>
       <FormGroup>
         <Label>Status:</Label>
-        <Select value={status} onChange={(e) => setStatus(e.target.value)}>
+        <Select
+          value={status}
+          onChange={(e) => setStatus(e.target.value)}
+          disabled
+        >
           <option value="Upcoming">Upcoming</option>
           <option value="Past">Past</option>
         </Select>

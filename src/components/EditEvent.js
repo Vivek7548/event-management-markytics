@@ -59,6 +59,7 @@ const Select = styled.select`
   font-size: 15px;
   background-color: #fafafa;
   transition: border-color 0.3s ease, background-color 0.3s ease;
+  pointer-events: none; /* Disable the dropdown for manual selection */
 
   &:focus {
     border-color: #3f51b5;
@@ -101,9 +102,23 @@ const EditEvent = () => {
       setTitle(eventToEdit.title);
       setDate(eventToEdit.date);
       setCity(eventToEdit.city);
-      setStatus(eventToEdit.status);
+      // Set the status based on the date
+      setStatus(getStatusBasedOnDate(eventToEdit.date));
     }
   }, [id, events]);
+
+  // Function to determine status based on the date
+  const getStatusBasedOnDate = (date) => {
+    const selectedDate = new Date(date);
+    const currentDate = new Date();
+    return selectedDate < currentDate ? "Past" : "Upcoming";
+  };
+
+  const handleDateChange = (e) => {
+    const selectedDate = e.target.value;
+    setDate(selectedDate);
+    setStatus(getStatusBasedOnDate(selectedDate)); // Automatically update status based on date
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -129,7 +144,7 @@ const EditEvent = () => {
         <Input
           type="date"
           value={date}
-          onChange={(e) => setDate(e.target.value)}
+          onChange={handleDateChange} // Update this to handle date change
           required
         />
       </FormGroup>
@@ -144,7 +159,7 @@ const EditEvent = () => {
       </FormGroup>
       <FormGroup>
         <Label>Status:</Label>
-        <Select value={status} onChange={(e) => setStatus(e.target.value)}>
+        <Select value={status} disabled> {/* Disable the dropdown for manual selection */}
           <option value="Upcoming">Upcoming</option>
           <option value="Past">Past</option>
         </Select>
