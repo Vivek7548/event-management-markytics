@@ -88,7 +88,7 @@ const EventsList = styled.div`
   justify-items: center;
   animation: ${fadeIn} 1s ease-in-out;
   max-width: 800px;
-  margin: 0 auto;  /* Centers the EventsList container */
+  margin: 0 auto; /* Centers the EventsList container */
 
   @media (max-width: 992px) {
     grid-template-columns: repeat(2, 1fr);
@@ -96,12 +96,12 @@ const EventsList = styled.div`
 
   @media (max-width: 576px) {
     grid-template-columns: 1fr;
-    padding: 10px;  /* Adds padding around the container on small screens */
-    max-width: 100%;  /* Ensures it takes full width on small screens */
+    padding: 10px; /* Adds padding around the container on small screens */
+    max-width: 100%; /* Ensures it takes full width on small screens */
   }
 
   @media (max-width: 320px) {
-    padding: 5px;  /* Further reduces padding on very small screens */
+    padding: 5px; /* Further reduces padding on very small screens */
   }
 `;
 
@@ -124,7 +124,7 @@ const EventCard = styled.div`
     color 0.3s ease;
   animation: ${cardBackgroundChange} 10s infinite alternate;
   height: 200px;
-  width: 100%;  /* Makes sure the card takes full width on small screens */
+  width: 100%; /* Makes sure the card takes full width on small screens */
   max-width: 300px;
   display: flex;
   flex-direction: column;
@@ -132,7 +132,7 @@ const EventCard = styled.div`
   justify-content: center;
   text-align: center;
   box-sizing: border-box;
-  margin: 10px 0;  /* Adjust margin to keep spacing consistent */
+  margin: 10px 0; /* Adjust margin to keep spacing consistent */
 
   &:hover {
     transform: scale(1.05);
@@ -157,7 +157,7 @@ const EventCard = styled.div`
     max-width: 100%;
     height: auto;
     padding: 15px;
-    margin: 10px 0;  /* Ensures even margin on all sides */
+    margin: 10px 0; /* Ensures even margin on all sides */
   }
 
   @media (max-width: 320px) {
@@ -170,11 +170,10 @@ const EventCard = styled.div`
     width: 100%;
     max-width: 100%;
     height: auto;
-    padding: 10px;  /* Further reduces padding for extra small screens */
-    margin: 5px 0;  /* Adjust margin for better spacing on very small screens */
+    padding: 10px; /* Further reduces padding for extra small screens */
+    margin: 5px 0; /* Adjust margin for better spacing on very small screens */
   }
 `;
-
 
 const EventDashboard = () => {
   const { events } = useContext(EventContext);
